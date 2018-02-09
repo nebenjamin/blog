@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+    {{ .Content }}
+    <div class="posts-listing">
+        {{ range .Pages }}
+        <div class="post-container">
+            <div class="post-title">
+                <a href="{{ .URL }}">{{ .Title }}</a>
+            </div>
+            <div>{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
+            <div class="summary">
+                <div>
+                {{ .Summary }}
+                </div>
+                <a href="{{ .URL }}" class="continue-reading">Continue Reading</a>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+{{ end }}

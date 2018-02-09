@@ -1,0 +1,20 @@
+.posts-listing {
+    background: #abc;
+}
+
+.post-container {
+    background: #bcd;
+}
+
+.post-title {
+    font-size: 20px;
+}
+
+.summary {
+    font-size: 15px;
+}
+
+a.continue-reading {
+    background: darkblue;
+    color: white;
+}
