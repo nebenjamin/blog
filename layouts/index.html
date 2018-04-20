@@ -1,3 +1,19 @@
 {{ define "main" }}
-    Hello
+    {{ .Content }}
+    <div class="posts-listing">
+        {{ range .Pages }}
+        <div class="post-container">
+            <div class="post-title">
+                <a href="{{ .URL }}">{{ .Title }}</a>
+            </div>
+            <time datetime="{{ dateFormat "2006-01-02" .Date.UTC }}">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</time>
+            <div class="summary">
+                <div>
+                {{ .Summary }}
+                </div>
+                <a href="{{ .URL }}" class="continue-reading">Continue Reading</a>
+            </div>
+        </div>
+        {{ end }}
+    </div>
 {{ end }}
