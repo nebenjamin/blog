@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ .Site.LanguageCode }}">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ .Site.Title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i">
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ "css/reset.css" | relURL }}" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ "css/main.css" | relURL }}" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ "css/posts.css" | relURL }}" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ "css/-debug.css" | relURL }}" />
-    <!--<script src="main.js"></script>-->
+    {{ partial "head.html" . }}
 </head>
 <body>
     <div class="grid-container">
         {{ partial "info.html" . }}
 
-        {{ block "main" . }}
-        {{ end }}
+        <div class="main-content">
+            {{ block "main" . }}
+            {{ end }}
+        </div>
     </div>
 </body>
 </html>

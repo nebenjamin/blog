@@ -6,10 +6,34 @@ html, body {
 
 .grid-container {
     min-height: 100%;
+    width: 100%;
     display: grid;
     grid-column-gap: 10px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr;
+}
+
+.grid-container .main-content {
+    min-height: 100%;
+    grid-column: 3 / -1;
+    display: flex;
+    flex-direction: column;
+}
+
+nav.pagination {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer.footer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-self: flex-end;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 /* Sidebar */
@@ -40,6 +64,10 @@ html, body {
     .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: 50px;
+    }
+
+    .grid-container .main-content {
+        grid-column: 1;
     }
 
     .sidebar {
